@@ -26,6 +26,13 @@ require_once INFINITY_DIR . '/inc/enqueue.php';
 require_once INFINITY_DIR . '/inc/helpers.php';
 
 /**
+ * Load WooCommerce integration if WooCommerce is active
+ */
+if ( class_exists( 'WooCommerce' ) ) {
+    require_once INFINITY_DIR . '/inc/integrations/woocommerce.php';
+}
+
+/**
  * After setup theme hook
  */
 add_action( 'after_setup_theme', 'infinity_setup' );

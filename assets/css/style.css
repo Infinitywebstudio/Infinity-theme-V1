@@ -199,6 +199,13 @@ ul, ol {
     margin: 0;
 }
 
+/* Header Navigation */
+.header-navigation {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 /* Primary Navigation */
 .primary-navigation {
     display: flex;

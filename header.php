@@ -29,7 +29,16 @@
                     <?php endif; ?>
                 </div>
 
-                <?php infinity_primary_menu(); ?>
+                <div class="header-navigation">
+                    <?php infinity_primary_menu(); ?>
+
+                    <?php
+                    // Display cart icon if WooCommerce is active
+                    if ( function_exists( 'infinity_woocommerce_cart_link' ) ) {
+                        infinity_woocommerce_cart_link();
+                    }
+                    ?>
+                </div>
             </div>
         </div>
     </header>
