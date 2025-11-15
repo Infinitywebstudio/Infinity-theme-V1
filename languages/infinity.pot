@@ -1,0 +1,143 @@
+# Copyright (C) 2025 Infinity Studio
+# This file is distributed under the same license as the Infinity 2025 Simple package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Infinity 2025 Simple 1.0.0\n"
+"Report-Msgid-Bugs-To: https://infinitystudio.com/support\n"
+"POT-Creation-Date: 2025-01-01 00:00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: inc/setup.php
+msgid "Menu Principal"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Par"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Dans"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Tags:"
+msgstr ""
+
+#: inc/helpers.php
+msgid "&laquo; Précédent"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Suivant &raquo;"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Précédent"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Suivant"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Auteur: %s"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Année: %s"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Mois: %s"
+msgstr ""
+
+#: inc/helpers.php
+msgid "Jour: %s"
+msgstr ""
+
+#: header.php
+msgid "Aller au contenu principal"
+msgstr ""
+
+#: footer.php
+msgid "Propulsé par %s"
+msgstr ""
+
+#: footer.php
+msgid "Thème: %s par %s"
+msgstr ""
+
+#: index.php
+msgid "Blog"
+msgstr ""
+
+#: index.php
+msgid "Lire la suite"
+msgstr ""
+
+#: index.php
+msgid "Aucun contenu trouvé"
+msgstr ""
+
+#: index.php
+msgid "Aucun article n'a été publié pour le moment."
+msgstr ""
+
+#: single.php
+msgid "%s min de lecture"
+msgstr ""
+
+#: single.php
+msgid "Pages:"
+msgstr ""
+
+#: archive.php
+msgid "Aucun contenu disponible pour cette archive."
+msgstr ""
+
+#: search.php
+msgid "Résultats de recherche pour: %s"
+msgstr ""
+
+#: search.php
+msgid "Aucun résultat trouvé"
+msgstr ""
+
+#: search.php
+msgid "Désolé, aucun résultat ne correspond à votre recherche. Veuillez essayer avec d'autres mots-clés."
+msgstr ""
+
+#: 404.php
+msgid "404"
+msgstr ""
+
+#: 404.php
+msgid "Page non trouvée"
+msgstr ""
+
+#: 404.php
+msgid "Désolé, la page que vous recherchez semble introuvable. Elle a peut-être été déplacée ou supprimée."
+msgstr ""
+
+#: 404.php
+msgid "Essayez une recherche"
+msgstr ""
+
+#: 404.php
+msgid "Liens utiles"
+msgstr ""
+
+#: 404.php
+msgid "Retour à l'accueil"
+msgstr ""
+
+#: 404.php
+msgid "Voir le blog"
+msgstr ""

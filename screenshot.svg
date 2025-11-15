@@ -1,0 +1,45 @@
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#ffffff"/>
+  
+  <!-- Header -->
+  <rect width="1200" height="80" fill="#f7f7f7"/>
+  <rect x="40" y="25" width="120" height="30" rx="4" fill="#0073aa"/>
+  <text x="100" y="47" font-family="Arial, sans-serif" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">INFINITY</text>
+  
+  <!-- Menu Items -->
+  <text x="900" y="47" font-family="Arial, sans-serif" font-size="14" fill="#333">Accueil</text>
+  <text x="1000" y="47" font-family="Arial, sans-serif" font-size="14" fill="#333">Blog</text>
+  <text x="1100" y="47" font-family="Arial, sans-serif" font-size="14" fill="#333">Contact</text>
+  
+  <!-- Main Content Area -->
+  <text x="600" y="150" font-family="Arial, sans-serif" font-size="36" fill="#222" text-anchor="middle" font-weight="bold">Infinity 2025 Simple</text>
+  <text x="600" y="190" font-family="Arial, sans-serif" font-size="18" fill="#666" text-anchor="middle">Thème WordPress minimaliste et performant</text>
+  
+  <!-- Post Cards -->
+  <!-- Card 1 -->
+  <rect x="40" y="250" width="350" height="280" rx="8" fill="#fff" stroke="#e5e5e5" stroke-width="1"/>
+  <rect x="40" y="250" width="350" height="180" rx="8" fill="#e5e5e5"/>
+  <text x="215" y="350" font-family="Arial, sans-serif" font-size="14" fill="#999" text-anchor="middle">Image</text>
+  <text x="60" y="460" font-family="Arial, sans-serif" font-size="18" fill="#222" font-weight="bold">Titre de l'article</text>
+  <text x="60" y="490" font-family="Arial, sans-serif" font-size="12" fill="#666">Lorem ipsum dolor sit amet...</text>
+  
+  <!-- Card 2 -->
+  <rect x="425" y="250" width="350" height="280" rx="8" fill="#fff" stroke="#e5e5e5" stroke-width="1"/>
+  <rect x="425" y="250" width="350" height="180" rx="8" fill="#e5e5e5"/>
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="14" fill="#999" text-anchor="middle">Image</text>
+  <text x="445" y="460" font-family="Arial, sans-serif" font-size="18" fill="#222" font-weight="bold">Titre de l'article</text>
+  <text x="445" y="490" font-family="Arial, sans-serif" font-size="12" fill="#666">Lorem ipsum dolor sit amet...</text>
+  
+  <!-- Card 3 -->
+  <rect x="810" y="250" width="350" height="280" rx="8" fill="#fff" stroke="#e5e5e5" stroke-width="1"/>
+  <rect x="810" y="250" width="350" height="180" rx="8" fill="#e5e5e5"/>
+  <text x="985" y="350" font-family="Arial, sans-serif" font-size="14" fill="#999" text-anchor="middle">Image</text>
+  <text x="830" y="460" font-family="Arial, sans-serif" font-size="18" fill="#222" font-weight="bold">Titre de l'article</text>
+  <text x="830" y="490" font-family="Arial, sans-serif" font-size="12" fill="#666">Lorem ipsum dolor sit amet...</text>
+  
+  <!-- Footer -->
+  <rect y="820" width="1200" height="80" fill="#f7f7f7"/>
+  <text x="600" y="855" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">© 2025 Infinity Studio - Thème WordPress Ultra Simple</text>
+  <text x="600" y="875" font-family="Arial, sans-serif" font-size="10" fill="#999" text-anchor="middle">Léger • Performant • Sans dépendances</text>
+</svg>
