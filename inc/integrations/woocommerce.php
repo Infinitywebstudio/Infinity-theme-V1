@@ -118,12 +118,12 @@ remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wra
  * Add custom WooCommerce wrapper
  */
 function infinity_woocommerce_wrapper_start() {
-    echo '<main id="primary" class="site-main woocommerce-main">';
+    echo '<div class="container"><main id="primary" class="site-main woocommerce-main">';
 }
 add_action( 'woocommerce_before_main_content', 'infinity_woocommerce_wrapper_start', 10 );
 
 function infinity_woocommerce_wrapper_end() {
-    echo '</main>';
+    echo '</main></div>';
 }
 add_action( 'woocommerce_after_main_content', 'infinity_woocommerce_wrapper_end', 10 );
 
