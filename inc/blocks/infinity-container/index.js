@@ -269,8 +269,8 @@
         },
 
         save: function() {
-            // Utilise render_callback PHP - pas de save nécessaire
-            return null;
+            // Sauvegarder les InnerBlocks pour qu'ils soient disponibles pour le render callback
+            return el(InnerBlocks.Content);
         }
     });
 })(window.wp);

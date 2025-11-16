@@ -79,13 +79,16 @@ add_action( 'init', 'infinity_register_blocks' );
  * Render callback for Infinity Container block
  */
 function infinity_container_render_callback( $attributes, $content, $block ) {
-    // Get inner blocks HTML
-    if ( ! empty( $block->inner_html ) ) {
-        $content = $block->inner_html;
-    } elseif ( ! empty( $block->inner_blocks ) ) {
-        $content = '';
-        foreach ( $block->inner_blocks as $inner_block ) {
-            $content .= render_block( $inner_block );
+    // Le contenu des InnerBlocks est déjà dans $content grâce à InnerBlocks.Content
+    // Si vide, essayer de récupérer depuis $block (fallback)
+    if ( empty( $content ) ) {
+        if ( ! empty( $block->inner_html ) ) {
+            $content = $block->inner_html;
+        } elseif ( ! empty( $block->inner_blocks ) ) {
+            $content = '';
+            foreach ( $block->inner_blocks as $inner_block ) {
+                $content .= render_block( $inner_block );
+            }
         }
     }
 
