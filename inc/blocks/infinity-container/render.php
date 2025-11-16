@@ -11,6 +11,8 @@
 
 // Récupérer les attributs
 $custom_class      = isset( $attributes['customClass'] ) ? esc_attr( $attributes['customClass'] ) : '';
+$width             = isset( $attributes['width'] ) ? esc_attr( $attributes['width'] ) : '';
+$height            = isset( $attributes['height'] ) ? esc_attr( $attributes['height'] ) : '';
 $padding_top       = isset( $attributes['paddingTop'] ) ? esc_attr( $attributes['paddingTop'] ) : '';
 $padding_right     = isset( $attributes['paddingRight'] ) ? esc_attr( $attributes['paddingRight'] ) : '';
 $padding_bottom    = isset( $attributes['paddingBottom'] ) ? esc_attr( $attributes['paddingBottom'] ) : '';
@@ -28,6 +30,13 @@ $border_style      = isset( $attributes['borderStyle'] ) ? esc_attr( $attributes
 
 // Construire le style inline (seulement si des valeurs sont définies)
 $styles = array();
+
+if ( ! empty( $width ) ) {
+    $styles[] = 'width:' . $width;
+}
+if ( ! empty( $height ) ) {
+    $styles[] = 'height:' . $height;
+}
 
 if ( ! empty( $padding_top ) ) {
     $styles[] = 'padding-top:' . $padding_top;

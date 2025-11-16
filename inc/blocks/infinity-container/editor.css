@@ -1,0 +1,36 @@
+/**
+ * Infinity Container Block - Editor Styles
+ * Styles used ONLY in the Gutenberg editor
+ */
+
+/* Make the block selectable and visible in the editor */
+.wp-block[data-type="infinity/container"] .container {
+    min-height: 50px;
+    outline: 2px dashed #e0e0e0;
+    outline-offset: -2px;
+    position: relative;
+    transition: outline-color 0.2s ease;
+}
+
+/* When block is selected */
+.wp-block[data-type="infinity/container"].is-selected .container {
+    outline-color: #007cba;
+}
+
+/* When block is empty, show a placeholder hint */
+.wp-block[data-type="infinity/container"] .container:empty::before {
+    content: "Infinity Container - Ajoutez des blocs ici";
+    color: #999;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* Remove outline when block has content */
+.wp-block[data-type="infinity/container"] .container.has-inner-blocks {
+    outline-style: solid;
+    outline-width: 1px;
+}

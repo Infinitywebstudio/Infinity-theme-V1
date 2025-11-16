@@ -10,6 +10,8 @@
         category: 'design',
         attributes: {
             customClass: { type: 'string', default: '' },
+            width: { type: 'string', default: '' },
+            height: { type: 'string', default: '' },
             paddingTop: { type: 'string', default: '' },
             paddingRight: { type: 'string', default: '' },
             paddingBottom: { type: 'string', default: '' },
@@ -30,6 +32,7 @@
             const { attributes, setAttributes } = props;
             const {
                 customClass,
+                width, height,
                 paddingTop, paddingRight, paddingBottom, paddingLeft,
                 marginTop, marginRight, marginBottom, marginLeft,
                 backgroundColor, backgroundImage,
@@ -38,6 +41,8 @@
 
             // Styles pour l'éditeur
             const containerStyle = {};
+            if (width) containerStyle.width = width;
+            if (height) containerStyle.height = height;
             if (paddingTop) containerStyle.paddingTop = paddingTop;
             if (paddingRight) containerStyle.paddingRight = paddingRight;
             if (paddingBottom) containerStyle.paddingBottom = paddingBottom;
@@ -71,6 +76,21 @@
                             value: customClass,
                             onChange: function(value) { setAttributes({ customClass: value }); },
                             help: 'Ajouter une classe CSS personnalisée'
+                        })
+                    ),
+                    // Dimensions
+                    el(PanelBody, { title: 'Dimensions', initialOpen: false },
+                        el(TextControl, {
+                            label: 'Largeur (Width)',
+                            value: width,
+                            onChange: function(value) { setAttributes({ width: value }); },
+                            placeholder: 'Ex: 100%, 500px, 50vw'
+                        }),
+                        el(TextControl, {
+                            label: 'Hauteur (Height)',
+                            value: height,
+                            onChange: function(value) { setAttributes({ height: value }); },
+                            placeholder: 'Ex: 300px, 50vh, auto'
                         })
                     ),
                     // Padding

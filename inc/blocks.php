@@ -25,6 +25,14 @@ function infinity_register_block_assets() {
         array(),
         INFINITY_VERSION
     );
+
+    // Register the editor style
+    wp_register_style(
+        'infinity-container-editor-style',
+        INFINITY_URI . '/inc/blocks/infinity-container/editor.css',
+        array(),
+        INFINITY_VERSION
+    );
 }
 add_action( 'init', 'infinity_register_block_assets' );
 
@@ -35,10 +43,13 @@ function infinity_register_blocks() {
     // Register Infinity Container block
     register_block_type( 'infinity/container', array(
         'editor_script'   => 'infinity-container-editor',
+        'editor_style'    => 'infinity-container-editor-style',
         'style'           => 'infinity-container-style',
         'render_callback' => 'infinity_container_render_callback',
         'attributes'      => array(
             'customClass'     => array( 'type' => 'string', 'default' => '' ),
+            'width'           => array( 'type' => 'string', 'default' => '' ),
+            'height'          => array( 'type' => 'string', 'default' => '' ),
             'paddingTop'      => array( 'type' => 'string', 'default' => '' ),
             'paddingRight'    => array( 'type' => 'string', 'default' => '' ),
             'paddingBottom'   => array( 'type' => 'string', 'default' => '' ),
