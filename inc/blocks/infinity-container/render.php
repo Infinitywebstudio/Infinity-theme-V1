@@ -132,7 +132,7 @@ $class_attr = 'class="' . implode( ' ', $classes ) . '"';
 // Générer la balise <style> si des règles CSS existent
 $style_tag = '';
 if ( ! empty( $css_rules ) ) {
-    $css_selector = '.container.' . $style_class;
+    $css_selector = '.' . $style_class;
     $style_tag = '<style>' . $css_selector . '{' . implode( ';', $css_rules ) . ';}</style>';
 }
 
