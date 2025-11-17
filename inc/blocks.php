@@ -92,6 +92,17 @@ function infinity_extract_container_styles( $blocks, &$css_rules ) {
             // Dimensions
             if ( ! empty( $attrs['width'] ) ) {
                 $rules[] = 'width:' . esc_attr( $attrs['width'] );
+                $rules[] = 'max-width:none';  // Override theme .container max-width
+
+                // Also reset margin/padding from .container if no custom values set
+                if ( empty( $attrs['marginLeft'] ) && empty( $attrs['marginRight'] ) ) {
+                    $rules[] = 'margin-left:0';
+                    $rules[] = 'margin-right:0';
+                }
+                if ( empty( $attrs['paddingLeft'] ) && empty( $attrs['paddingRight'] ) ) {
+                    $rules[] = 'padding-left:0';
+                    $rules[] = 'padding-right:0';
+                }
             }
             if ( ! empty( $attrs['height'] ) ) {
                 $rules[] = 'height:' . esc_attr( $attrs['height'] );
