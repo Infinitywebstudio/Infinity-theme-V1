@@ -36,10 +36,46 @@
     outline-width: 1px;
 }
 
-/* Ensure inner blocks are visible in flex/grid layouts */
-.wp-block[data-type="infinity/container"] .container > .block-editor-inner-blocks,
-.wp-block[data-type="infinity/container"] .container > .block-editor-inner-blocks > .block-editor-block-list__layout {
-    display: contents;
+/* Make inner blocks wrapper take full space and be a valid drop zone */
+.wp-block[data-type="infinity/container"] .container > .block-editor-inner-blocks {
+    width: 100%;
+    min-height: 50px;
+}
+
+/* For flex containers, make the inner blocks wrapper inherit flex properties */
+.wp-block[data-type="infinity/container"] .container[style*="display: flex"] > .block-editor-inner-blocks,
+.wp-block[data-type="infinity/container"] .container[style*="display:flex"] > .block-editor-inner-blocks {
+    display: flex;
+    flex-direction: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    gap: inherit;
+}
+
+.wp-block[data-type="infinity/container"] .container[style*="display: flex"] > .block-editor-inner-blocks > .block-editor-block-list__layout,
+.wp-block[data-type="infinity/container"] .container[style*="display:flex"] > .block-editor-inner-blocks > .block-editor-block-list__layout {
+    display: flex;
+    flex-direction: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    gap: inherit;
+    width: 100%;
+}
+
+/* For grid containers, make the inner blocks wrapper inherit grid properties */
+.wp-block[data-type="infinity/container"] .container[style*="display: grid"] > .block-editor-inner-blocks,
+.wp-block[data-type="infinity/container"] .container[style*="display:grid"] > .block-editor-inner-blocks {
+    display: grid;
+    grid-template-columns: inherit;
+    gap: inherit;
+}
+
+.wp-block[data-type="infinity/container"] .container[style*="display: grid"] > .block-editor-inner-blocks > .block-editor-block-list__layout,
+.wp-block[data-type="infinity/container"] .container[style*="display:grid"] > .block-editor-inner-blocks > .block-editor-block-list__layout {
+    display: grid;
+    grid-template-columns: inherit;
+    gap: inherit;
+    width: 100%;
 }
 
 /* Make sure flex/grid properties work in the editor */
