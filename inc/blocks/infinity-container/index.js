@@ -263,7 +263,11 @@
                     )
                 ),
                 el('div', blockProps,
-                    el(InnerBlocks)
+                    el(InnerBlocks, {
+                        renderAppender: function() {
+                            return el(InnerBlocks.ButtonBlockAppender);
+                        }
+                    })
                 )
             );
         },
@@ -271,6 +275,11 @@
         save: function() {
             // Sauvegarder les InnerBlocks pour qu'ils soient disponibles pour le render callback
             return el(InnerBlocks.Content);
+        },
+
+        // Support nested containers
+        supports: {
+            html: false
         }
     });
 })(window.wp);
