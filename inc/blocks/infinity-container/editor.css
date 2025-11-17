@@ -37,26 +37,9 @@
 }
 
 /* Ensure inner blocks are visible in flex/grid layouts */
-/* Note: Using display:contents can break drag & drop, so we only use it for flex/grid */
-.wp-block[data-type="infinity/container"] .container[style*="display: flex"] > .block-editor-inner-blocks,
-.wp-block[data-type="infinity/container"] .container[style*="display:flex"] > .block-editor-inner-blocks,
-.wp-block[data-type="infinity/container"] .container[style*="display: grid"] > .block-editor-inner-blocks,
-.wp-block[data-type="infinity/container"] .container[style*="display:grid"] > .block-editor-inner-blocks {
-    display: flex;
-    flex-direction: inherit;
-    gap: inherit;
-    width: 100%;
-}
-
-.wp-block[data-type="infinity/container"] .container[style*="display: flex"] > .block-editor-inner-blocks > .block-editor-block-list__layout,
-.wp-block[data-type="infinity/container"] .container[style*="display:flex"] > .block-editor-inner-blocks > .block-editor-block-list__layout,
-.wp-block[data-type="infinity/container"] .container[style*="display: grid"] > .block-editor-inner-blocks > .block-editor-block-list__layout,
-.wp-block[data-type="infinity/container"] .container[style*="display:grid"] > .block-editor-inner-blocks > .block-editor-block-list__layout {
-    display: flex;
-    flex-direction: inherit;
-    flex: 1;
-    width: 100%;
-    gap: inherit;
+.wp-block[data-type="infinity/container"] .container > .block-editor-inner-blocks,
+.wp-block[data-type="infinity/container"] .container > .block-editor-inner-blocks > .block-editor-block-list__layout {
+    display: contents;
 }
 
 /* Make sure flex/grid properties work in the editor */
@@ -68,48 +51,5 @@
 .wp-block[data-type="infinity/container"] .container[style*="display: grid"],
 .wp-block[data-type="infinity/container"] .container[style*="display:grid"] {
     display: grid !important;
-}
-
-/* Center the "+" button (block appender) - Similar to native Group block */
-.wp-block[data-type="infinity/container"] .block-list-appender {
-    margin: 0;
-    padding: 0;
-}
-
-.wp-block[data-type="infinity/container"] .block-editor-button-block-appender {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    margin: 0;
-}
-
-/* Style the button itself */
-.wp-block[data-type="infinity/container"] .block-editor-button-block-appender svg {
-    margin: 0 auto;
-}
-
-/* Ensure the appender is visible and centered even in flex/grid containers */
-.wp-block[data-type="infinity/container"] .container > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-/* Make container a valid drop zone for dragging blocks into it */
-.wp-block[data-type="infinity/container"] .container {
-    position: relative;
-}
-
-.wp-block[data-type="infinity/container"] .container > .block-editor-inner-blocks {
-    min-height: 50px;
-}
-
-/* Show drop indicator when dragging over empty container */
-.wp-block[data-type="infinity/container"].is-drop-target .container {
-    outline-color: #007cba;
-    outline-style: solid;
-    outline-width: 2px;
 }
 
