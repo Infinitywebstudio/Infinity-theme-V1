@@ -53,3 +53,16 @@
     display: grid !important;
 }
 
+/* Center the "+" button (block appender) */
+.wp-block[data-type="infinity/container"] .block-list-appender {
+    margin: 20px auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wp-block[data-type="infinity/container"] .block-editor-button-block-appender {
+    margin: 0 auto;
+}
+
