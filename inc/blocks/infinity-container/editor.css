@@ -19,16 +19,7 @@
     outline-color: #007cba;
 }
 
-/* When block is empty, show a placeholder hint */
-.wp-block[data-type="infinity/container"] .container:empty::after {
-    content: "Infinity Container - Ajoutez des blocs ici";
-    color: #999;
-    font-size: 14px;
-    display: block;
-    text-align: center;
-    padding: 20px;
-    pointer-events: none;
-}
+/* Removed old placeholder - now using drop zone instead */
 
 /* Remove outline when block has content */
 .wp-block[data-type="infinity/container"] .container.has-inner-blocks {
@@ -39,7 +30,44 @@
 /* Make inner blocks wrapper take full space and be a valid drop zone */
 .wp-block[data-type="infinity/container"] .container > .block-editor-inner-blocks {
     width: 100%;
-    min-height: 50px;
+    min-height: 100px;
+    position: relative;
+}
+
+/* Create a visible drop zone in the center when container is empty or being hovered */
+.wp-block[data-type="infinity/container"] .container > .block-editor-inner-blocks > .block-editor-block-list__layout:empty::before {
+    content: 'Déposez les blocs ici';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    border: 2px dashed #ccc;
+    border-radius: 4px;
+    background: #f9f9f9;
+    color: #999;
+    font-size: 14px;
+    margin: 10px;
+    transition: all 0.2s ease;
+}
+
+/* Highlight drop zone when dragging over */
+.wp-block[data-type="infinity/container"].is-drop-target .container > .block-editor-inner-blocks > .block-editor-block-list__layout:empty::before,
+.wp-block[data-type="infinity/container"] .container > .block-editor-inner-blocks > .block-editor-block-list__layout:empty:hover::before {
+    border-color: #007cba;
+    background: #e3f2fd;
+    color: #007cba;
+}
+
+/* Make the entire inner-blocks area clickable for adding blocks */
+.wp-block[data-type="infinity/container"] .container > .block-editor-inner-blocks > .block-editor-block-list__layout {
+    min-height: 100px;
+    width: 100%;
+}
+
+/* Show default block appender (paragraph placeholder) in center when empty */
+.wp-block[data-type="infinity/container"] .block-editor-default-block-appender {
+    margin: 20px auto;
+    max-width: 100%;
 }
 
 /* For flex containers, make the inner blocks wrapper inherit flex properties */

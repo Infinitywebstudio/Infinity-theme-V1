@@ -80,6 +80,10 @@
                 style: containerStyle
             });
 
+            // Force InnerBlocks to always show the appender for better drop zone
+            const ALLOWED_BLOCKS = null; // Allow all blocks
+            const TEMPLATE = null;
+
             return el(Fragment, {},
                 el(InspectorControls, {},
                     // Classe CSS
@@ -263,7 +267,12 @@
                     )
                 ),
                 el('div', blockProps,
-                    el(InnerBlocks)
+                    el(InnerBlocks, {
+                        allowedBlocks: ALLOWED_BLOCKS,
+                        template: TEMPLATE,
+                        renderAppender: InnerBlocks.DefaultBlockAppender,
+                        orientation: 'vertical'
+                    })
                 )
             );
         },
