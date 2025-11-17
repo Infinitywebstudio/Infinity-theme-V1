@@ -30,7 +30,7 @@
 /* Make inner blocks wrapper take full space and be a valid drop zone */
 .wp-block[data-type="infinity/container"] .container > .block-editor-inner-blocks {
     width: 100%;
-    min-height: 100px;
+    min-height: 50px;
     position: relative;
 }
 
@@ -40,13 +40,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100px;
+    min-height: 50px;
     border: 2px dashed #ccc;
     border-radius: 4px;
     background: #f9f9f9;
     color: #999;
     font-size: 14px;
-    margin: 10px;
+    margin: 0;
+    padding: 15px;
     transition: all 0.2s ease;
 }
 
@@ -60,13 +61,13 @@
 
 /* Make the entire inner-blocks area clickable for adding blocks */
 .wp-block[data-type="infinity/container"] .container > .block-editor-inner-blocks > .block-editor-block-list__layout {
-    min-height: 100px;
+    min-height: 50px;
     width: 100%;
 }
 
 /* Show default block appender (paragraph placeholder) in center when empty */
 .wp-block[data-type="infinity/container"] .block-editor-default-block-appender {
-    margin: 20px auto;
+    margin: 0;
     max-width: 100%;
 }
 
