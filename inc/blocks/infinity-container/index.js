@@ -278,8 +278,9 @@
         },
 
         save: function() {
-            // Sauvegarder les InnerBlocks pour qu'ils soient disponibles pour le render callback
-            return el(InnerBlocks.Content);
+            // Pour les blocs dynamiques avec render_callback, on retourne null
+            // Le rendu sera géré côté serveur via render_callback
+            return null;
         }
     });
 })(window.wp);

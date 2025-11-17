@@ -246,6 +246,10 @@ function infinity_register_blocks() {
         'editor_style'    => 'infinity-container-editor-style',
         'style'           => 'infinity-container-style',
         'render_callback' => 'infinity_container_render_callback',
+        'supports'        => array(
+            'html' => false,
+            'align' => false,
+        ),
         'attributes'      => array(
             'customClass'        => array( 'type' => 'string', 'default' => '' ),
             'width'              => array( 'type' => 'string', 'default' => '' ),
@@ -279,16 +283,13 @@ add_action( 'init', 'infinity_register_blocks' );
  * Render callback for Infinity Container block
  */
 function infinity_container_render_callback( $attributes, $content, $block ) {
-    // Le contenu des InnerBlocks est déjà dans $content grâce à InnerBlocks.Content
-    // Si vide, essayer de récupérer depuis $block (fallback)
-    if ( empty( $content ) ) {
-        if ( ! empty( $block->inner_html ) ) {
-            $content = $block->inner_html;
-        } elseif ( ! empty( $block->inner_blocks ) ) {
-            $content = '';
-            foreach ( $block->inner_blocks as $inner_block ) {
-                $content .= render_block( $inner_block );
-            }
+    // Pour les blocs dynamiques, toujours rendre les inner_blocks dynamiquement
+    // Ne pas utiliser le $content sauvegardé statiquement
+    $content = '';
+
+    if ( ! empty( $block->inner_blocks ) ) {
+        foreach ( $block->inner_blocks as $inner_block ) {
+            $content .= render_block( $inner_block );
         }
     }
 
