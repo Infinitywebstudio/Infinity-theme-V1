@@ -107,9 +107,15 @@ ul, ol {
     min-height: 100vh;
 }
 
-.site-content {
+.site-content,
+.site-main {
     flex: 1;
     padding: 40px 0;
+}
+
+/* Page Starter template uses plain <main> */
+.site > main {
+    flex: 1;
 }
 
 /* Screen reader text */
