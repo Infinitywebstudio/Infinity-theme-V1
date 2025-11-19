@@ -166,7 +166,10 @@ function infinity_extract_container_styles( $blocks, &$css_rules ) {
 
             // Determine class
             if ( ! empty( $attrs['customClass'] ) ) {
-                $selector = '.' . esc_attr( $attrs['customClass'] );
+                // Replace spaces with dots for multiple classes or sanitize
+                $class = esc_attr( $attrs['customClass'] );
+                // Convert spaces to dots for CSS selector (e.g., "class1 class2" becomes ".class1.class2")
+                $selector = '.' . str_replace( ' ', '.', trim( $class ) );
             } else {
                 $selector = '.inf-' . substr( md5( serialize( $attrs ) ), 0, 8 );
             }
@@ -246,10 +249,6 @@ function infinity_register_blocks() {
         'editor_style'    => 'infinity-container-editor-style',
         'style'           => 'infinity-container-style',
         'render_callback' => 'infinity_container_render_callback',
-        'supports'        => array(
-            'html' => false,
-            'align' => false,
-        ),
         'attributes'      => array(
             'customClass'        => array( 'type' => 'string', 'default' => '' ),
             'width'              => array( 'type' => 'string', 'default' => '' ),
@@ -283,13 +282,16 @@ add_action( 'init', 'infinity_register_blocks' );
  * Render callback for Infinity Container block
  */
 function infinity_container_render_callback( $attributes, $content, $block ) {
-    // Pour les blocs dynamiques, toujours rendre les inner_blocks dynamiquement
-    // Ne pas utiliser le $content sauvegardé statiquement
-    $content = '';
-
-    if ( ! empty( $block->inner_blocks ) ) {
-        foreach ( $block->inner_blocks as $inner_block ) {
-            $content .= render_block( $inner_block );
+    // Le contenu des InnerBlocks est déjà dans $content grâce à InnerBlocks.Content
+    // Si vide, essayer de récupérer depuis $block (fallback)
+    if ( empty( $content ) ) {
+        if ( ! empty( $block->inner_html ) ) {
+            $content = $block->inner_html;
+        } elseif ( ! empty( $block->inner_blocks ) ) {
+            $content = '';
+            foreach ( $block->inner_blocks as $inner_block ) {
+                $content .= render_block( $inner_block );
+            }
         }
     }
 

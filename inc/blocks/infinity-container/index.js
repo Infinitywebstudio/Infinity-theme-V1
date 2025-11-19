@@ -80,9 +80,19 @@
                 style: containerStyle
             });
 
-            // Force InnerBlocks to always show the appender for better drop zone
-            const ALLOWED_BLOCKS = null; // Allow all blocks
-            const TEMPLATE = null;
+            // Create innerBlocksProps to apply flex/grid styles to the InnerBlocks wrapper
+            const innerBlocksStyle = {};
+            if (display === 'flex') {
+                innerBlocksStyle.display = 'flex';
+                if (flexDirection) innerBlocksStyle.flexDirection = flexDirection;
+                if (justifyContent) innerBlocksStyle.justifyContent = justifyContent;
+                if (alignItems) innerBlocksStyle.alignItems = alignItems;
+                if (gap) innerBlocksStyle.gap = gap;
+            } else if (display === 'grid') {
+                innerBlocksStyle.display = 'grid';
+                if (gridTemplateColumns) innerBlocksStyle.gridTemplateColumns = gridTemplateColumns;
+                if (gap) innerBlocksStyle.gap = gap;
+            }
 
             return el(Fragment, {},
                 el(InspectorControls, {},
@@ -267,20 +277,18 @@
                     )
                 ),
                 el('div', blockProps,
-                    el(InnerBlocks, {
-                        allowedBlocks: ALLOWED_BLOCKS,
-                        template: TEMPLATE,
-                        renderAppender: InnerBlocks.DefaultBlockAppender,
-                        orientation: 'vertical'
-                    })
+                    (display === 'flex' || display === 'grid') ?
+                        el('div', { style: innerBlocksStyle, className: 'infinity-inner-wrapper' },
+                            el(InnerBlocks)
+                        ) :
+                        el(InnerBlocks)
                 )
             );
         },
 
         save: function() {
-            // Pour les blocs dynamiques avec render_callback, on retourne null
-            // Le rendu sera géré côté serveur via render_callback
-            return null;
+            // Sauvegarder les InnerBlocks pour qu'ils soient disponibles pour le render callback
+            return el(InnerBlocks.Content);
         }
     });
 })(window.wp);
