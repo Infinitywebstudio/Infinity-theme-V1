@@ -1,0 +1,174 @@
+/* Padding/Margin Editor Styles - Matching WordPress Gutenberg style */
+
+.infinity-spacing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.infinity-spacing-title {
+    font-size: 11px;
+    font-weight: 500;
+    color: #1e1e1e;
+    text-transform: uppercase;
+}
+
+.infinity-unit-selector {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #fff;
+    padding: 4px 8px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 11px;
+    transition: background-color 0.2s;
+    position: relative;
+    border: 1px solid #757575;
+}
+
+.infinity-unit-selector:hover {
+    background-color: #f0f0f0;
+}
+
+.infinity-dropdown-icon {
+    font-size: 8px;
+    color: #757575;
+}
+
+.infinity-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #757575;
+    border-radius: 2px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.infinity-dropdown-menu.show {
+    display: block;
+}
+
+.infinity-dropdown-item {
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 11px;
+    transition: background-color 0.2s;
+    color: #1e1e1e;
+}
+
+.infinity-dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.infinity-dropdown-item.active {
+    background-color: #f0f0f0;
+    color: #1e1e1e;
+    font-weight: 500;
+}
+
+.infinity-spacing-controls {
+    background-color: #fff;
+    border: 1px solid #757575;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.infinity-spacing-row {
+    display: flex;
+    height: 40px;
+}
+
+.infinity-spacing-input-wrapper {
+    flex: 1;
+    position: relative;
+    border-right: 1px solid #ddd;
+}
+
+.infinity-spacing-input-wrapper:last-of-type {
+    border-right: none;
+}
+
+/* Override WordPress default input styles */
+.components-panel__body .infinity-spacing-input,
+.infinity-spacing-input {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 0;
+    border-radius: 0;
+    color: #1e1e1e;
+    text-align: center;
+    font-size: 13px;
+    outline: 0;
+    box-shadow: none;
+    transition: background-color 0.2s;
+    padding: 0;
+    margin: 0;
+    min-height: 0;
+    line-height: normal;
+}
+
+.components-panel__body .infinity-spacing-input:hover,
+.infinity-spacing-input:hover {
+    background-color: #f0f0f0;
+}
+
+.components-panel__body .infinity-spacing-input:focus,
+.infinity-spacing-input:focus {
+    background-color: #fff;
+    outline: 0;
+    box-shadow: 0 0 0 1px #007cba;
+    border: 0;
+    border-color: transparent;
+}
+
+.infinity-spacing-link-button {
+    width: 40px;
+    background-color: #fff;
+    border: none;
+    border-left: 1px solid #757575;
+    color: #757575;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.infinity-spacing-link-button:hover {
+    background-color: #f0f0f0;
+    color: #1e1e1e;
+}
+
+.infinity-spacing-link-button.active {
+    background-color: #f0f0f0;
+    color: #007cba;
+}
+
+.infinity-spacing-labels {
+    display: flex;
+    margin-top: 8px;
+    padding: 0 2px;
+}
+
+.infinity-spacing-label {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #757575;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.infinity-spacing-label:last-child {
+    width: 40px;
+    flex: none;
+}
